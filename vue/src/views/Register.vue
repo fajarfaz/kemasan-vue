@@ -66,16 +66,15 @@
 	};
 
 
-	function register(ev) {
+	function register(ev) { //tambahkan @submit pada method di form register
 		ev.preventDefault();
 		store
 		.dispatch("register", user)
 		.then(() => {			
 			router.push({
 				name: "Dashboard",
-			});
-		})
-
+			})
+		});
 	}
 </script>
 <style type="text/css"></style>

@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Surveys from '../views/Surveys.vue'
 import DefaultLayout from '../components/DefaultLayout.vue'
 import AuthLayout from "../components/AuthLayout.vue";
+import SurveyView from "../components/SurveyView.vue";
 import store from '../store'
 
 
@@ -15,8 +16,10 @@ const routes = [
 	component: DefaultLayout,
 	meta: { requiresAuth: true }, //untuk pemeriksaan Session Auth user sedang berstatus login atau tidak
 	children: [	
-		{path: '/dashboard', name: 'Dashboard', component: Dashboard},
-		{path: '/surveys', name: 'Surveys', component: Surveys}
+		{ path: '/dashboard', name: 'Dashboard', component: Dashboard },
+		{ path: '/surveys', name: 'Surveys', component: Surveys },
+		{ path: '/surveys/create', name:'SurveysCreate', component: SurveyView },
+		{ path: '/surveys/:id', name:'SurveyView', component: SurveyView }
 	]
 },
 {
